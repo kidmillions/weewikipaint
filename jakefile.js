@@ -13,21 +13,23 @@ task('lint', [], function() {
     files.exclude('node_modules');
 
 
-    var options = {
-        node: true,
-        bitwise: true,
-        curly: false,
-        eqeqeq: true,
-        forin: true,
-        immed: true,
-        latedef: true,
-        newcap: true,
-        noarg: true,
-        noempty: true,
-        nonew: true,
-        undef: true,
-        strict: true
-    };
+    function nodeLintOptions() {
+       return {
+            node: true,
+            bitwise: true,
+            curly: false,
+            eqeqeq: true,
+            forin: true,
+            immed: true,
+            latedef: true,
+            newcap: true,
+            noarg: true,
+            noempty: true,
+            nonew: true,
+            undef: true,
+            strict: true
+        };
+    }
 
-    lint.validateFileList(files.toArray(), options, {});
+    lint.validateFileList(files.toArray(), nodeLintOptions(), {});
 });

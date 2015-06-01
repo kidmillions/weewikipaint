@@ -15,7 +15,8 @@ User Stories:
 - marketing copy
 
 Engineering Tasks:
-- automated build
+* automated build
+- static code analysis (lint)
 - continuous integration
 - server-side testing
 - client-side testing

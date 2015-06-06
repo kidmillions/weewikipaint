@@ -14,7 +14,7 @@ task('lint', [], function() {
 
 
     function nodeLintOptions() {
-       return {
+        return {
             node: true,
             bitwise: true,
             curly: false,

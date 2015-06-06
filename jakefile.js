@@ -33,7 +33,10 @@ task('lint', [], function() {
         };
     }
 
-    lint.validateFileList(files.toArray(), nodeLintOptions(), {});
+    var passed = lint.validateFileList(files.toArray(), nodeLintOptions(), {});
+    if (!passed) {
+        fail("Lint failed");
+    }
 });
 
 desc('integrate!');
@@ -43,6 +46,7 @@ task('integrate', ['default'], function() {
     console.log('\na. walk to integration box.');
     console.log('\nb. git pull');
     console.log('\nc. jake');
+    console.log('\nd. If jake fails, stop and start over');
     console.log('c. git checkout integration');
     console.log('4. git merge master --no-ff --log');
     console.log('5. switch back to master');
